@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:islami_app/splash_screen/splash_screen.dart';
 
 import 'home_screen.dart';
 
@@ -20,9 +21,10 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
 
         debugShowCheckedModeBanner: false,
-        initialRoute: HomeScreen.routeName,
+        initialRoute: SplashScreen.routeName,
         routes: {
           HomeScreen.routeName: (context) => HomeScreen(),
+          SplashScreen.routeName: (context) => SplashScreen(),
         },
       ),
     );
