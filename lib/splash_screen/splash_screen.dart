@@ -2,12 +2,39 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami_app/home_screen.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   static const String routeName = "SplashScreen";
   const SplashScreen({super.key});
 
   @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+
+class _SplashScreenState extends State<SplashScreen> {
+
+  @override
+  void initState() {
+
+    Future.delayed(
+      const Duration(seconds: 3),
+          () {
+
+        Navigator.pushReplacementNamed(
+          context,
+          HomeScreen.routeName,
+        );
+
+      },
+    );  }
+
+
+
+
+  @override
+
   Widget build(BuildContext context) {
     return Stack(
       children: [
@@ -55,7 +82,7 @@ class SplashScreen extends StatelessWidget {
                     ],
                   ),
 
-                  SizedBox(height: 10.h),
+                  SizedBox(height: 20.h),
                 ],
               ),
             ),
