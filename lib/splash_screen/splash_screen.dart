@@ -59,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen> {
                           alignment: Alignment.center,
                           children: [
                             Image.asset(
-                              "assets/images/routelogo2.png.png",
+                              "assets/images/routelogo2.png",
                               fit: BoxFit.contain,
                               width: 139.w,
                               height: 139.h,
