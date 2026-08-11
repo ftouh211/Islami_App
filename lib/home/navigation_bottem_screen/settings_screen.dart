@@ -11,20 +11,11 @@ class SettingsTab extends StatefulWidget {
 class _SettingsTabState extends State<SettingsTab> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Image.asset("assets/images/main_bg.png"),
-        Scaffold(
-          backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            title: Center(child: Text("SettingsTab")),
-          ),
-          // body: Column(
-          //
-          // ),
-        )
-      ],
-    );
-  }
+    return Container(
+      color: Colors.transparent,
+      // decoration: BoxDecoration(
+      //   image: DecorationImage(image: AssetImage("assets/images/main_bg.png"))
+      // ),
+
+    );  }
 }

@@ -11,15 +11,27 @@
 //     if (!_loadedPages.contains(pageNumber)) {
 //       final fontLoader = FontLoader(fontFamily);
 //
-//       fontLoader.addFont(
-//         rootBundle.load(
-//           'assets/quran/fonts/QCF2$page.ttf',
-//         ),
-//       );
+//       fontLoader.addFont(rootBundle.load('assets/quran/fonts/QCF2$page.ttf'));
 //
 //       await fontLoader.load();
 //
 //       _loadedPages.add(pageNumber);
+//     }
+//
+//     return fontFamily;
+//   }
+//
+//   static Future<String> loadBasmalaFont() async {
+//     const fontFamily = 'QCF2BSML';
+//
+//     if (!_loadedPages.contains(0)) {
+//       final fontLoader = FontLoader(fontFamily);
+//
+//       fontLoader.addFont(rootBundle.load('assets/quran/fonts/QCF2BSML.ttf'));
+//
+//       await fontLoader.load();
+//
+//       _loadedPages.add(0);
 //     }
 //
 //     return fontFamily;
@@ -39,11 +51,7 @@ class QuranFontService {
     if (!_loadedPages.contains(pageNumber)) {
       final fontLoader = FontLoader(fontFamily);
 
-      fontLoader.addFont(
-        rootBundle.load(
-          'assets/quran/fonts/QCF2$page.ttf',
-        ),
-      );
+      fontLoader.addFont(rootBundle.load('assets/quran/fonts/QCF2$page.ttf'));
 
       await fontLoader.load();
 
@@ -59,11 +67,7 @@ class QuranFontService {
     if (!_loadedPages.contains(0)) {
       final fontLoader = FontLoader(fontFamily);
 
-      fontLoader.addFont(
-        rootBundle.load(
-          'assets/quran/fonts/QCF2BSML.ttf',
-        ),
-      );
+      fontLoader.addFont(rootBundle.load('assets/quran/fonts/QCF2BSML.ttf'));
 
       await fontLoader.load();
 

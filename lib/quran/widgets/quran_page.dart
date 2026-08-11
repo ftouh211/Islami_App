@@ -220,7 +220,8 @@ class QuranPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xffFFF9E8),
+      // color: const Color(0xffFFF9E8),
+      color: Colors.transparent,
 
       child: LayoutBuilder(
         builder: (context, constraints) {
@@ -234,8 +235,8 @@ class QuranPage extends StatelessWidget {
 
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 18,
-                    vertical: 15,
+                    horizontal: 4,
+                    vertical: 2,
                   ),
 
                   child: Column(
@@ -278,7 +279,8 @@ class QuranPage extends StatelessWidget {
             style: const TextStyle(
               fontSize: 26,
               fontWeight: FontWeight.bold,
-              color: Colors.blue
+              // color: Colors.blueAccent
+              color: Color(0xFF0D47A1)
             ),
           ),
         ),

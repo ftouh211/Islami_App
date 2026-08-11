@@ -488,6 +488,7 @@
 // //   }
 // // }
 // //
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/app_colors.dart';
@@ -803,8 +804,6 @@ class _QuranTabState extends State<QuranTab> {
                 //   ),
                 // );
 
-
-
                 // Navigator.pushNamed(
                 //   arguments: SuraModel(suraNames[index], index),
                 //   context,
@@ -850,8 +849,6 @@ class _QuranTabState extends State<QuranTab> {
                               //   ),
                               // );
 
-
-
                               // Navigator.pushNamed(
                               //   arguments: SuraModel(suraNames[index], index),
                               //   context,
@@ -861,10 +858,7 @@ class _QuranTabState extends State<QuranTab> {
                               Navigator.pushNamed(
                                 context,
                                 QuranDetails.routeName,
-                                arguments: SuraModel(
-                                  suraNames[index],
-                                  index,
-                                ),
+                                arguments: SuraModel(suraNames[index], index),
                               );
                             },
 
@@ -898,7 +892,6 @@ class _QuranTabState extends State<QuranTab> {
                               //   ),
                               // );
 
-
                               //
                               // Navigator.pushNamed(
                               //   arguments: SuraModel(suraNames[index], index),
@@ -909,13 +902,9 @@ class _QuranTabState extends State<QuranTab> {
                               Navigator.pushNamed(
                                 context,
                                 QuranDetails.routeName,
-                                arguments: SuraModel(
-                                  suraNames[index],
-                                  index,
-                                ),
+                                arguments: SuraModel(suraNames[index], index),
                               );
                             },
-
 
                             child: Text(
                               suraNames[index],

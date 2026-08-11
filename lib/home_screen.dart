@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:islami_app/home/ahadeth_screen.dart';
-import 'package:islami_app/home/quran_screen.dart';
-import 'package:islami_app/home/radio_screen.dart';
-import 'package:islami_app/home/sepha_screen.dart';
-import 'package:islami_app/home/settings_screen.dart';
+import 'package:islami_app/home/navigation_bottem_screen/ahadeth_screen.dart';
+import 'package:islami_app/home/navigation_bottem_screen/quran_screen.dart';
+import 'package:islami_app/home/navigation_bottem_screen/radio_screen.dart';
+import 'package:islami_app/home/navigation_bottem_screen/sepha_screen.dart';
+import 'package:islami_app/home/navigation_bottem_screen/settings_screen.dart';
+
 import 'package:islami_app/splash_screen/custom_bottom_nav_item.dart';
 
 class HomeScreen extends StatefulWidget {
