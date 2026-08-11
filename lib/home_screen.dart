@@ -33,18 +33,18 @@ class _HomeScreenState extends State<HomeScreen> {
         Image.asset("assets/images/main_bg.png"),
         Scaffold(
           backgroundColor: Colors.transparent,
-          // appBar: AppBar(
-          //   backgroundColor: Colors.transparent,
-          //
-          //   centerTitle: true,
-          //   title: Text(
-          //     "Islami",
-          //     style: GoogleFonts.elMessiri(
-          //       fontSize: 30,
-          //       fontWeight: FontWeight(700),
-          //     ),
-          //   ),
-          // ),
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+
+            centerTitle: true,
+            title: Text(
+              "Islami",
+              style: GoogleFonts.elMessiri(
+                fontSize: 30,
+                fontWeight: FontWeight(700),
+              ),
+            ),
+          ),
 
           bottomNavigationBar: BottomNavigationBar(
             selectedItemColor: Colors.black,
