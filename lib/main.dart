@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/home/details/hadeth_details.dart';
 import 'package:islami_app/home/details/quran_details%20.dart';
+import 'package:islami_app/my_theme_data.dart';
 import 'package:islami_app/splash_screen/splash_screen.dart';
 
 import 'home_screen.dart';
@@ -22,8 +24,12 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       child: MaterialApp(
 
+        theme: MyThemeData.lightTheme,
+        darkTheme: MyThemeData.darkTheme,
+
+        themeMode: ThemeMode.dark,
         debugShowCheckedModeBanner: false,
-        initialRoute: SplashScreen.routeName,
+        initialRoute: HomeScreen.routeName,
         routes: {
           HomeScreen.routeName: (context) => HomeScreen(),
           SplashScreen.routeName: (context) => SplashScreen(),

@@ -46,17 +46,40 @@ flutter_launcher_icons:
   ios: true
   image_path: "assets/images/logo3.png"
 
+
+#flutter_native_splash:
+#  color: "#FFFFFF"
+#  image: assets/images/logo3.png
+#
+#  android: true
+#  ios: true
+#
+#  android_12:
+#    color: "#FFFFFF"
+#    image: assets/images/logo3.png
+
+
 flutter_native_splash:
   color: "#FFFFFF"
-  image: assets/images/logo3.png
+  color_dark: "#141A2E"
 
-  android: true
-  ios: true
+  image: assets/images/splash_logo.png
+  image_dark: assets/images/dark_logo.png
+
+  branding: assets/images/routegold.png
+  branding_dark: assets/images/routeyellow.png
+
+  fullscreen: true
 
   android_12:
     color: "#FFFFFF"
-    image: assets/images/logo3.png
+    color_dark: "#141A2E"
 
+    image: assets/images/splash_logo.png
+    image_dark: assets/images/dark_logo.png
+
+    branding: assets/images/routegold.png
+    branding_dark: assets/images/routeyellow.png
 
 dev_dependencies:
   flutter_test:

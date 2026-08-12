@@ -192,7 +192,10 @@ class _RadioTabState extends State<RadioTab> {
           children: [
             Text(
               _errorMessage!,
-              style: GoogleFonts.elMessiri(fontSize: 18),
+              style: GoogleFonts.elMessiri(
+                fontSize: 18,
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
@@ -204,7 +207,12 @@ class _RadioTabState extends State<RadioTab> {
                 });
                 _loadRadios();
               },
-              child: const Text('إعادة المحاولة'),
+              child: Text(
+                'إعادة المحاولة',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
             ),
           ],
         ),
@@ -225,6 +233,7 @@ class _RadioTabState extends State<RadioTab> {
           style: GoogleFonts.elMessiri(
             fontSize: 24,
             fontWeight: FontWeight(700),
+            color: Theme.of(context).colorScheme.onSurface,
           ),
           textAlign: TextAlign.center,
         ),
@@ -236,6 +245,7 @@ class _RadioTabState extends State<RadioTab> {
           style: GoogleFonts.elMessiri(
             fontSize: 24,
             fontWeight: FontWeight(700),
+            color: Theme.of(context).colorScheme.onSurface,
           ),
           textAlign: TextAlign.center,
         ),
@@ -263,7 +273,7 @@ class _RadioTabState extends State<RadioTab> {
               child: Icon(
                 Icons.skip_previous,
                 size: 50,
-                color: AppColors.PrimaryColor,
+                color: Theme.of(context).colorScheme.outline,
               ),
             ),
 
@@ -277,7 +287,7 @@ class _RadioTabState extends State<RadioTab> {
                   child: Icon(
                     playing ? Icons.pause : Icons.play_arrow,
                     size: 50,
-                    color: AppColors.PrimaryColor,
+                    color: Theme.of(context).colorScheme.outline,
                   ),
                 );
               },
@@ -288,7 +298,7 @@ class _RadioTabState extends State<RadioTab> {
               child: Icon(
                 Icons.skip_next,
                 size: 50,
-                color: AppColors.PrimaryColor,
+                color: Theme.of(context).colorScheme.outline,
               ),
             ),
           ],

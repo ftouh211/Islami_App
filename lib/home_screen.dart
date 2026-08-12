@@ -31,34 +31,27 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset("assets/images/main_bg.png"),
+        Image.asset(
+          Theme.of(context).brightness == Brightness.dark
+              ? "assets/images/dark_main_bg.png"
+              : "assets/images/main_bg.png",
+          fit: BoxFit.cover,
+        ),
+        // Image.asset("assets/images/main_bg.png"),
         Scaffold(
-          backgroundColor: Colors.transparent,
           appBar: AppBar(
-            backgroundColor: Colors.transparent,
-
-            centerTitle: true,
             title: Text(
-              "Islami",
-              style: GoogleFonts.elMessiri(
-                fontSize: 30,
-                fontWeight: FontWeight(700),
-              ),
+              "اسلامي",
+              style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
             ),
           ),
 
           bottomNavigationBar: BottomNavigationBar(
-            selectedItemColor: Colors.black,
-            unselectedItemColor: Colors.white,
             currentIndex: selectedIndex,
-            backgroundColor: Color(0xffB7935F),
-            type: BottomNavigationBarType.fixed,
             onTap: (index) {
               selectedIndex = index;
-
               setState(() {});
             },
-
             items: [
               CustomBottomNavItem(
                 label: "Quran",

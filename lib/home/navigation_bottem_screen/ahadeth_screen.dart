@@ -23,43 +23,46 @@ class _AhadethTabState extends State<AhadethTab> {
     // TODO: implement initState
     super.initState();
     loadhadethFiles();
-
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
 
         children: [
           Image.asset("assets/images/hadith_header.png", height: 219),
 
-          Divider(color: AppColors.PrimaryColor, thickness: 2),
+          Divider(thickness: 2),
           Text(
             "الحديث",
             style: GoogleFonts.elMessiri(
               fontSize: 24,
               fontWeight: FontWeight(700),
+              color: Theme.of(context).colorScheme.onSurface,
+
             ),
             textAlign: TextAlign.center,
           ),
-          Divider(color: AppColors.PrimaryColor, thickness: 2),
+          Divider(thickness: 2),
 
           Expanded(
             child: ListView.separated(
               separatorBuilder: (context, index) => Row(
                 children: [
                   Expanded(
-                    child: Icon(Icons.star, color: AppColors.PrimaryColor),
+                    child: Icon(
+                      Icons.star,
+                      color: Theme.of(context).colorScheme.outline,
+                    ),
                   ),
+                  Expanded(flex: 2, child: Divider(thickness: 2)),
                   Expanded(
-                    flex: 2,
-                    child: Divider(thickness: 2, color: AppColors.PrimaryColor),
-                  ),
-                  Expanded(
-                    child: Icon(Icons.star, color: AppColors.PrimaryColor),
+                    child: Icon(
+                      Icons.star,
+                      color: Theme.of(context).colorScheme.outline,
+                    ),
                   ),
                 ],
               ),
@@ -80,6 +83,8 @@ class _AhadethTabState extends State<AhadethTab> {
                     style: GoogleFonts.inter(
                       fontSize: 20,
                       fontWeight: FontWeight(700),
+                      color: Theme.of(context).colorScheme.onSurface,
+
                     ),
                     textAlign: TextAlign.center,
                   ),

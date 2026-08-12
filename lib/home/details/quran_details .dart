@@ -873,13 +873,12 @@ class _QuranDetailsState extends State<QuranDetails> {
       return Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/main_bg.png"),
+            image: AssetImage( Theme.of(context).brightness == Brightness.dark
+                ? "assets/images/dark_main_bg.png"
+                : "assets/images/main_bg.png",),
           ),
         ),
-        child: const Scaffold(
-          backgroundColor: Colors.transparent,
-          body: Center(child: CircularProgressIndicator()),
-        ),
+        child: const Scaffold(body: Center(child: CircularProgressIndicator())),
       );
     }
 
@@ -887,11 +886,12 @@ class _QuranDetailsState extends State<QuranDetails> {
       return Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/main_bg.png"),
+            image: AssetImage( Theme.of(context).brightness == Brightness.dark
+                ? "assets/images/dark_main_bg.png"
+                : "assets/images/main_bg.png",),
           ),
         ),
         child: const Scaffold(
-          backgroundColor: Colors.transparent,
           body: Center(child: Text('حدث خطأ في تحميل السورة')),
         ),
       );
@@ -899,21 +899,16 @@ class _QuranDetailsState extends State<QuranDetails> {
 
     return Container(
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage("assets/images/main_bg.png")),
+        image: DecorationImage(
+          image: AssetImage(
+            Theme.of(context).brightness == Brightness.dark
+                ? "assets/images/dark_main_bg.png"
+                : "assets/images/main_bg.png",
+          ),
+        ),
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          title: Text(
-            currentSurahName,
-            style: GoogleFonts.elMessiri(
-              fontSize: 28,
-              fontWeight: FontWeight(700),
-            ),
-          ),
-          centerTitle: true,
-        ),
+        appBar: AppBar(title: Text(currentSurahName)),
         body: SafeArea(
           child: Directionality(
             textDirection: TextDirection.rtl,
@@ -961,7 +956,7 @@ class _QuranDetailsState extends State<QuranDetails> {
                         start: 10,
                       ),
                       child: Card(
-                        color: Colors.white.withValues(alpha: 0.7),
+                        // color: Colors.white.withValues(alpha: 0.7),
                         elevation: 0,
                         child: QuranPage(
                           page: data.page,
@@ -985,7 +980,7 @@ class _QuranDetailsState extends State<QuranDetails> {
   Future<_QuranPageData> _loadPage(int pageNumber) {
     return _pageFutures.putIfAbsent(
       pageNumber,
-          () => _loadPageInternal(pageNumber),
+      () => _loadPageInternal(pageNumber),
     );
   }
 

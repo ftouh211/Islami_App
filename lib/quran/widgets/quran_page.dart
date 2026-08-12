@@ -204,7 +204,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app/quran/modles/quran_page_model.dart';
 
-
 class QuranPage extends StatelessWidget {
   final QuranPageModel page;
   final String fontFamily;
@@ -243,7 +242,7 @@ class QuranPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
                     children: page.lines.map((line) {
-                      return _buildLine(line);
+                      return _buildLine(context, line);
                     }).toList(),
                   ),
                 ),
@@ -255,7 +254,7 @@ class QuranPage extends StatelessWidget {
     );
   }
 
-  Widget _buildLine(QuranLineModel line) {
+  Widget _buildLine(BuildContext context, QuranLineModel line) {
     // ==========================================
     // Surah Header
     // ==========================================
@@ -276,11 +275,11 @@ class QuranPage extends StatelessWidget {
             textDirection: TextDirection.rtl,
             textAlign: TextAlign.center,
 
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 26,
-              fontWeight: FontWeight.bold,
+              // fontWeight: FontWeight.bold,
               // color: Colors.blueAccent
-              color: Color(0xFF0D47A1)
+              color: Theme.of(context).colorScheme.onSecondary,
             ),
           ),
         ),
@@ -310,7 +309,7 @@ class QuranPage extends StatelessWidget {
             style: TextStyle(
               fontFamily: basmalaFontFamily,
               fontSize: 28,
-              color: Colors.red
+              color: Colors.red,
             ),
           ),
         ),
@@ -321,11 +320,7 @@ class QuranPage extends StatelessWidget {
     // Quran Text
     // ==========================================
 
-    final qpcText = line.words
-        .map(
-          (word) => word.qpcV2,
-    )
-        .join(' ');
+    final qpcText = line.words.map((word) => word.qpcV2).join(' ');
 
     // return SizedBox(
     //   width: double.infinity,
@@ -368,6 +363,7 @@ class QuranPage extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: fontFamily,
                   fontSize: 26,
+                  color: Theme.of(context).colorScheme.onSecondary,
                 ),
 
                 recognizer: TapGestureRecognizer()

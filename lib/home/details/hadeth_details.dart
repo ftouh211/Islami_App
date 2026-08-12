@@ -17,22 +17,16 @@ class _HadethDetailsState extends State<HadethDetails> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage("assets/images/main_bg.png")),
-      ),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-
-          centerTitle: true,
-          title: Text(
-            "Islami",
-            style: GoogleFonts.elMessiri(
-              fontSize: 30,
-              fontWeight: FontWeight(700),
-            ),
+        image: DecorationImage(
+          image: AssetImage(
+            Theme.of(context).brightness == Brightness.dark
+                ? "assets/images/dark_main_bg.png"
+                : "assets/images/main_bg.png",
           ),
         ),
+      ),
+      child: Scaffold(
+        appBar: AppBar(title: Text("اسلامي")),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -45,16 +39,22 @@ class _HadethDetailsState extends State<HadethDetails> {
                   start: 10,
                 ),
                 child: Card(
-                  color: Colors.white.withValues(alpha: 0.8),
-
+                  // color: Colors.white.withValues(alpha: 0.8),
                   child: Column(
                     children: [
-                      SizedBox(height: 25,),
-                      Text(model.title, style: GoogleFonts.elMessiri(
-                        fontSize: 22,
-                        fontWeight: FontWeight(700),
-                      ),),
-                      Divider(color: AppColors.PrimaryColor, thickness: 2,endIndent: 30,indent: 30,),
+                      SizedBox(height: 25),
+                      Text(
+                        model.title,
+                        style: GoogleFonts.elMessiri(
+                          fontSize: 22,
+                          fontWeight: FontWeight(700),
+                        ),
+                      ),
+                      Divider(
+                        thickness: 2,
+                        endIndent: 30,
+                        indent: 30,
+                      ),
 
                       Expanded(
                         child: Padding(
@@ -71,6 +71,9 @@ class _HadethDetailsState extends State<HadethDetails> {
                                   fontSize: 22,
                                   fontWeight: FontWeight(500),
                                   height: 1.8,
+
+                                  color: Theme.of(context).colorScheme.onSecondary,
+
                                 ),
                               );
                             },

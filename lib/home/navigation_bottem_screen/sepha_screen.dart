@@ -30,7 +30,9 @@ class _SephaTabState extends State<SephaTab> {
                 top: 0,
                 left: 170,
                 child: Image.asset(
-                  "assets/images/head of seb7a.png",
+                  Theme.of(context).brightness == Brightness.dark
+                      ? "assets/images/dark head of seb7a.png"
+                      : "assets/images/head of seb7a.png",
                   height: 120,
                   width: 150,
                 ),
@@ -47,14 +49,14 @@ class _SephaTabState extends State<SephaTab> {
               //     ),
               //   ),
               // ),
-
               GestureDetector(
                 onTap: onSebhaTap,
                 child: Transform.rotate(
                   angle: rotation,
                   child: Image.asset(
-                    "assets/images/body of seb7a.png",
-                    height: 400,
+                    Theme.of(context).brightness == Brightness.dark
+                        ? "assets/images/dark body of seb7a.png"
+                        : "assets/images/body of seb7a.png",                    height: 400,
                     width: 320,
                   ),
                 ),
@@ -67,6 +69,7 @@ class _SephaTabState extends State<SephaTab> {
           style: GoogleFonts.elMessiri(
             fontSize: 24,
             fontWeight: FontWeight(700),
+            color: Theme.of(context).colorScheme.onSurface,
           ),
 
           textAlign: TextAlign.center,
@@ -102,7 +105,7 @@ class _SephaTabState extends State<SephaTab> {
             width: 80,
             height: 70,
             decoration: BoxDecoration(
-              color: AppColors.PrimaryColor,
+              color: Theme.of(context).colorScheme.outline,
               borderRadius: BorderRadius.circular(30),
             ),
             child: Center(
@@ -111,7 +114,7 @@ class _SephaTabState extends State<SephaTab> {
                 style: GoogleFonts.elMessiri(
                   fontSize: 24,
                   fontWeight: FontWeight(700),
-                  color: Colors.white,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
             ),
@@ -123,7 +126,7 @@ class _SephaTabState extends State<SephaTab> {
             width: 200,
             height: 70,
             decoration: BoxDecoration(
-              color: AppColors.PrimaryColor,
+              color: Theme.of(context).colorScheme.outline,
               borderRadius: BorderRadius.circular(30),
             ),
             child: Center(
@@ -132,7 +135,7 @@ class _SephaTabState extends State<SephaTab> {
                 style: GoogleFonts.elMessiri(
                   fontSize: 24,
                   fontWeight: FontWeight(700),
-                  color: Colors.white,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
             ),

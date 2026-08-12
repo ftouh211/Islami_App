@@ -745,7 +745,7 @@ class _QuranTabState extends State<QuranTab> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Image.asset("assets/images/quran_header_icn.png", height: 220),
-          Divider(color: AppColors.PrimaryColor, thickness: 3, height: 1),
+          Divider(height: 1),
           SizedBox(
             height: 40,
             child: Row(
@@ -757,7 +757,7 @@ class _QuranTabState extends State<QuranTab> {
                     style: GoogleFonts.elMessiri(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      decorationColor: AppColors.PrimaryColor,
+                      color: Theme.of(context).colorScheme.onSurface,
                       decorationThickness: 2,
                     ),
                   ),
@@ -766,7 +766,7 @@ class _QuranTabState extends State<QuranTab> {
                   flex: 0,
                   child: VerticalDivider(
                     thickness: 2,
-                    color: AppColors.PrimaryColor,
+                    // color: AppColors.PrimaryColor,
                   ),
                 ),
                 Expanded(
@@ -776,7 +776,7 @@ class _QuranTabState extends State<QuranTab> {
                     style: GoogleFonts.elMessiri(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      decorationColor: AppColors.PrimaryColor,
+                      color: Theme.of(context).colorScheme.onSurface,
                       decorationThickness: 2,
                     ),
                   ),
@@ -784,7 +784,7 @@ class _QuranTabState extends State<QuranTab> {
               ],
             ),
           ),
-          Divider(color: AppColors.PrimaryColor, thickness: 3, height: 1),
+          Divider(height: 1),
           Expanded(
             child: InkWell(
               onTap: () {
@@ -818,7 +818,8 @@ class _QuranTabState extends State<QuranTab> {
                     //   width: 2,
                     // ),
                     verticalInside: BorderSide(
-                      color: AppColors.PrimaryColor,
+                      // color: AppColors.PrimaryColor,
+                      color: Theme.of(context).colorScheme.outline,
                       width: 2,
                     ),
                   ),
@@ -868,6 +869,7 @@ class _QuranTabState extends State<QuranTab> {
                               style: GoogleFonts.elMessiri(
                                 fontSize: 17,
                                 fontWeight: FontWeight.w600,
+                                color: Theme.of(context).colorScheme.onSurface,
                               ),
                             ),
                           ),
@@ -912,6 +914,7 @@ class _QuranTabState extends State<QuranTab> {
                               style: GoogleFonts.elMessiri(
                                 fontSize: 17,
                                 fontWeight: FontWeight.w600,
+                                color: Theme.of(context).colorScheme.onSurface,
                               ),
                             ),
                           ),
