@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_launcher_icons/xml_templates.dart';
@@ -12,7 +13,7 @@ class SephaTab extends StatefulWidget {
 }
 
 class _SephaTabState extends State<SephaTab> {
-  List<String> aldhdhakar = ["سبحان الله", "الحمدالله", "الله اكبر"];
+  List<String> aldhdhakar = ["praise_god".tr(), "thank_god".tr(), "god_is_the_greatest".tr()];
   int index = 0;
   int number_aldhdhakar = 1;
   double rotation = 0;
@@ -65,7 +66,7 @@ class _SephaTabState extends State<SephaTab> {
           ),
         ),
         Text(
-          "عدد التسبيحات",
+          "number_of_tasbeehs".tr(),
           style: GoogleFonts.elMessiri(
             fontSize: 24,
             fontWeight: FontWeight(700),
@@ -123,7 +124,7 @@ class _SephaTabState extends State<SephaTab> {
         SizedBox(height: 20),
         Center(
           child: Container(
-            width: 200,
+            width: 250,
             height: 70,
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.outline,

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -36,7 +37,7 @@ class _AhadethTabState extends State<AhadethTab> {
 
           Divider(thickness: 2),
           Text(
-            "الحديث",
+            "hadeth".tr(),
             style: GoogleFonts.elMessiri(
               fontSize: 24,
               fontWeight: FontWeight(700),

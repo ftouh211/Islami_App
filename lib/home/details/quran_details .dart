@@ -873,9 +873,11 @@ class _QuranDetailsState extends State<QuranDetails> {
       return Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage( Theme.of(context).brightness == Brightness.dark
-                ? "assets/images/dark_main_bg.png"
-                : "assets/images/main_bg.png",),
+            image: AssetImage(
+              Theme.of(context).brightness == Brightness.dark
+                  ? "assets/images/dark_main_bg.png"
+                  : "assets/images/main_bg.png",
+            ),
           ),
         ),
         child: const Scaffold(body: Center(child: CircularProgressIndicator())),
@@ -886,9 +888,11 @@ class _QuranDetailsState extends State<QuranDetails> {
       return Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage( Theme.of(context).brightness == Brightness.dark
-                ? "assets/images/dark_main_bg.png"
-                : "assets/images/main_bg.png",),
+            image: AssetImage(
+              Theme.of(context).brightness == Brightness.dark
+                  ? "assets/images/dark_main_bg.png"
+                  : "assets/images/main_bg.png",
+            ),
           ),
         ),
         child: const Scaffold(

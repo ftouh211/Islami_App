@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -41,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Scaffold(
           appBar: AppBar(
             title: Text(
-              "اسلامي",
+              "islami".tr(),
               style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
             ),
           ),
@@ -54,26 +55,27 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             items: [
               CustomBottomNavItem(
-                label: "Quran",
+                label: "quran".tr(),
                 imagePath: "assets/images/quran_icn.png",
               ).toBottomNavigationBarItem(),
 
               CustomBottomNavItem(
-                label: "Ahadeth",
+                label: "ahadeth".tr(),
                 imagePath: "assets/images/ahadeth.png",
               ).toBottomNavigationBarItem(),
               CustomBottomNavItem(
-                label: "Sepha",
+                label: "sepha".tr(),
                 imagePath: "assets/images/sebha_blue.png",
               ).toBottomNavigationBarItem(),
               CustomBottomNavItem(
-                label: "Radio",
+                label: "radio".tr(),
                 imagePath: "assets/images/radio_blue.png",
               ).toBottomNavigationBarItem(),
 
               BottomNavigationBarItem(
+
                 icon: Icon(Icons.settings),
-                label: "Setting",
+                label: "setting".tr(),
               ),
             ],
           ),

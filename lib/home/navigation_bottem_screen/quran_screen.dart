@@ -489,7 +489,9 @@
 // // }
 // //
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/app_colors.dart';
 import 'package:islami_app/home/details/quran_details%20.dart';
@@ -739,195 +741,131 @@ class _QuranTabState extends State<QuranTab> {
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Image.asset("assets/images/quran_header_icn.png", height: 220),
-          Divider(height: 1),
-          SizedBox(
-            height: 40,
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    "عدد الآيات",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.elMessiri(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.onSurface,
-                      decorationThickness: 2,
-                    ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Image.asset("assets/images/quran_header_icn.png", height: 220),
+        Divider(height: 1),
+        SizedBox(
+          height: 40.h,
+          child: Row(
+            children: [
+              Expanded(
+                child: Text(
+                  "number_of_verses".tr(),
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.elMessiri(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onSurface,
+                    decorationThickness: 2,
                   ),
                 ),
-                Expanded(
-                  flex: 0,
-                  child: VerticalDivider(
-                    thickness: 2,
-                    // color: AppColors.PrimaryColor,
+              ),
+              Expanded(
+                flex: 0,
+                child: VerticalDivider(
+                  thickness: 2,
+                  // color: AppColors.PrimaryColor,
+                ),
+              ),
+              Expanded(
+                child: Text(
+                  "sura_name".tr(),
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.elMessiri(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onSurface,
+                    decorationThickness: 2,
                   ),
                 ),
-                Expanded(
-                  child: Text(
-                    "إسم السورة",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.elMessiri(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.onSurface,
-                      decorationThickness: 2,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
-          Divider(height: 1),
-          Expanded(
-            child: InkWell(
-              onTap: () {
-                setState(() {});
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => const AhadethTab(),
-                //   ),
-                // );
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => QuranDetails(
-                //       surahNumber: 2,
-                //     ),
-                //   ),
-                // );
-
-                // Navigator.pushNamed(
-                //   arguments: SuraModel(suraNames[index], index),
-                //   context,
-                //   QuranDetails.routeName,
-                // );
-              },
-              child: SingleChildScrollView(
-                child: Table(
-                  border: TableBorder(
-                    // horizontalInside: BorderSide(
-                    //   color: AppColors.PrimaryColor,
-                    //   width: 2,
-                    // ),
-                    verticalInside: BorderSide(
-                      // color: AppColors.PrimaryColor,
-                      color: Theme.of(context).colorScheme.outline,
-                      width: 2,
-                    ),
+        ),
+        Divider(height: 1),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              setState(() {});
+            },
+            child: SingleChildScrollView(
+              child: Table(
+                border: TableBorder(
+                  // horizontalInside: BorderSide(
+                  //   color: AppColors.PrimaryColor,
+                  //   width: 2,
+                  // ),
+                  verticalInside: BorderSide(
+                    // color: AppColors.PrimaryColor,
+                    color: Theme.of(context).colorScheme.outline,
+                    width: 2.w,
                   ),
-                  columnWidths: const {
-                    0: FlexColumnWidth(1),
-                    1: FlexColumnWidth(1),
-                  },
-                  children: List.generate(suraNames.length, (index) {
-                    return TableRow(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          child: InkWell(
-                            onTap: () {
-                              setState(() {});
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) => const AhadethTab(),
-                              //   ),
-                              // );
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) => QuranDetails(
-                              //       surahNumber: 2,
-                              //     ),
-                              //   ),
-                              // );
-
-                              // Navigator.pushNamed(
-                              //   arguments: SuraModel(suraNames[index], index),
-                              //   context,
-                              //   QuranDetails.routeName,
-                              // );
-
-                              Navigator.pushNamed(
-                                context,
-                                QuranDetails.routeName,
-                                arguments: SuraModel(suraNames[index], index),
-                              );
-                            },
-
-                            child: Text(
-                              versesNumber[index].toString(),
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.elMessiri(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w600,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          child: InkWell(
-                            onTap: () {
-                              setState(() {});
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) => const AhadethTab(),
-                              //   ),
-                              // );
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) => QuranDetails(
-                              //       surahNumber: 2,
-                              //     ),
-                              //   ),
-                              // );
-
-                              //
-                              // Navigator.pushNamed(
-                              //   arguments: SuraModel(suraNames[index], index),
-                              //   context,
-                              //   QuranDetails.routeName,
-                              // );
-
-                              Navigator.pushNamed(
-                                context,
-                                QuranDetails.routeName,
-                                arguments: SuraModel(suraNames[index], index),
-                              );
-                            },
-
-                            child: Text(
-                              suraNames[index],
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.elMessiri(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w600,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    );
-                  }),
                 ),
+                columnWidths: const {
+                  0: FlexColumnWidth(1),
+                  1: FlexColumnWidth(1),
+                },
+                children: List.generate(suraNames.length, (index) {
+                  return TableRow(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {});
+
+                            Navigator.pushNamed(
+                              context,
+                              QuranDetails.routeName,
+                              arguments: SuraModel(suraNames[index], index),
+                            );
+                          },
+
+                          child: Text(
+                            versesNumber[index].toString(),
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.elMessiri(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w600,
+                              color: Theme.of(context).colorScheme.onSurface,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {});
+
+                            Navigator.pushNamed(
+                              context,
+                              QuranDetails.routeName,
+                              arguments: SuraModel(suraNames[index], index),
+                            );
+                          },
+
+                          child: Text(
+                            suraNames[index],
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.elMessiri(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w600,
+                              color: Theme.of(context).colorScheme.onSurface,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                }),
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

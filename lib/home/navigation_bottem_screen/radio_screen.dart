@@ -63,6 +63,7 @@
 
 // lib/radio/radio_tab.dart
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/home/api_models/radio_model.dart';
@@ -182,7 +183,7 @@ class _RadioTabState extends State<RadioTab> {
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
-      return const Center(child: CircularProgressIndicator());
+      return Center(child: CircularProgressIndicator(color: Theme.of(context).colorScheme.outline,));
     }
 
     if (_errorMessage != null && _radios.isEmpty) {
@@ -229,7 +230,7 @@ class _RadioTabState extends State<RadioTab> {
         SizedBox(height: 60),
 
         Text(
-          "إذاعة القرآن الكريم",
+          "holy_quran_radio".tr(),
           style: GoogleFonts.elMessiri(
             fontSize: 24,
             fontWeight: FontWeight(700),
@@ -254,12 +255,15 @@ class _RadioTabState extends State<RadioTab> {
 
         // مؤشر صغير وقت ما البث بيعمل buffering
         if (_isBuffering)
-          const Padding(
-            padding: EdgeInsets.only(top: 10),
+          Padding(
+            padding: const EdgeInsets.only(top: 10),
             child: SizedBox(
               width: 20,
               height: 20,
-              child: CircularProgressIndicator(strokeWidth: 2),
+              child: CircularProgressIndicator(
+                strokeWidth: 2,
+                color: Theme.of(context).colorScheme.outline,
+              ),
             ),
           ),
 
